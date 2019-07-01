@@ -1,0 +1,337 @@
+@CHARSET "UTF-8";
+/*---------------------------------------------------------------------------*/
+#file_editor {
+	position: fixed;
+	display: none;
+	z-index: 86;
+	opacity: 1.0;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+}
+#file_editor .inner {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	width: auto;
+	height: auto;
+	max-width: 600px;
+	max-height: 500px;
+	-webkit-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	-ms-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.2);
+	border: solid 1px #bfbfbf;
+	background: #efefef;
+}
+#file_close {
+	position: absolute;
+	z-index: 87;
+	top: 0px;
+	right: 0px;
+	margin: 0;
+	padding: 0;
+	font-size: 30px;
+	text-align: center;
+	line-height: 1.0;
+	width: 34px;
+	height: 34px;
+	background: #bfbfbf;
+	cursor: pointer;
+}
+#file_header {
+	position: relative;
+	margin: 0;
+	padding: 3px;
+	width: 100%;
+	height: 34px;
+	background: #dfdfdf;
+}
+#file_header:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+#file_header li {
+	float: left;
+}
+#file_header li img {
+	margin-left: 3px;
+	height: 24px;
+	width: 24px;
+	cursor: pointer;
+}
+#file_conte {
+	position: relative;
+	margin: 0;
+	padding: 3px;
+	width: 100%;
+	height: 100%;
+	min-height: 150px;
+	background: #f7f7f7;
+}
+#file_conte:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+#file_conte form {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+}
+/* 表示サイズ */
+#file_area {
+	position: relative;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 150px;
+	background: transparent;
+}
+#file_area:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+/*編集画面コンテンツ*/
+#file_conte .file_panel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	#position: relative;
+	#clear: both;
+	margin: 0;
+	padding: 3px;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+#file_conte .file_commit {
+	width: 100%;
+	margin-top: 10px;
+	text-align: center;
+}
+/* ファイル選択 */
+#file_conte .file_panel input[type="file"] {
+	clear: both;
+	float: left;
+	margin: 10px 0px;
+	padding: 3px;
+	width: 100%;
+	font-size: 14px;
+	line-height: 1.5;
+	min-height: 34px;
+	text-align: center;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	background: #afafaf;
+	color: #ffffff;
+	cursor: pointer;
+}
+/* 入力フォーム */
+#file_conte .file_form {
+	position: relative;
+	margin: 2px 0 0 0;
+	font-size: 14px; /* 文字サイズ */
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif, arial, verdana;
+	display: -webkit-flex;
+	display: flex;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	width: 100%;
+	min-width: 0;
+	background: transparent;
+}
+#file_conte .file_form h3 {
+	order: 1;
+	flex-basis: 125px; /* 幅 */
+	min-width: 125px;
+	min-height: 1.0em;
+	padding: 5px 10px;
+	text-align: left;
+	font-size: 14px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	color: #3f3f3f; /* 文字色 */
+}
+/* ファイル削除用の設定 */
+#file_conte .file_list_panel {
+	position: relative;
+	clear: both;
+	margin: 0;
+	padding: 3px;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+#file_conte .file_list_panel:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+#file_conte .file_form div.prev {
+	order: 1;
+	flex-basis: 170px; /* 幅 */
+	min-width: 170px;
+	min-height: 160px;
+	margin: 0;
+	padding: 5px 10px;
+	text-align: left;
+	font-size: 14px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	color: #3f3f3f; /* 文字色 */
+	#background: #cfffcf;
+}
+#file_conte .file_form div.next {
+	order: 2;
+	flex: 1 0 auto;
+	flex-basis: 200px;
+	min-width: 200px;
+	max-height: 200px;
+	padding: 3px 10px;
+	font-size: 14px;
+	overflow: auto;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	min-width: 0;
+	color: #3f3f3f;
+	#background: #cfcfff;
+}
+#file_conte .file_form div.next > span:hover {
+	color: #3f3f3f;
+	background: #cfcfff;
+}
+/* ファイル復活用の設定 */
+#file_conte .file_restore_panel {
+	position: relative;
+	clear: both;
+	margin: 0;
+	padding: 3px;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+#file_conte .file_restore_panel:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+#file_conte .file_form div.file_history {
+	width: 100%;
+	min-height: 80px;
+	padding: 2px 10px;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif, arial, verdana;
+	font-size: 12px;
+	line-height: 1.5;
+	overflow: auto;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	min-width: 0;
+	color: #3f3f3f;
+	border: solid 1px #cfcfcf;
+
+}
+#file_conte .file_form div.file_history > span:hover {
+	color: #3f3f3f;
+	background: #cfcfff;
+}
+/* 入力フォーム */
+#file_conte input[type="text"]
+{
+	margin: 0;
+	padding: 3px;
+	width: 90%;
+	max-width: 230px;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif, arial, verdana;
+	font-size: 14px;
+	line-height: 1.5;
+	word-wrap: break-word;
+	border: solid 1px #bfbfbf;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	-ms-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	background: #fafafa;
+}
+/* 入力の際に、枠を表示する */
+#file_conte input[type="text"]:focus
+{
+	border: 1px solid #ffc0cb;
+}
+#file_footer {
+	position: relative;
+	padding: 3px;
+	width: 100%;
+	height: 30px;
+	background: #dfdfdf;
+}
+#file_footer:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+/* ファイル管理・開始ボタン */
+/*
+"<div class='file_button' onclick='file_start(this);'>file</div>"
+*/
+div.file_button {
+	position: absolute;
+	top: 3px;
+	right: 10px;
+	margin: 0;
+	padding: 2px 0px 0px 0px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 1.0;
+	min-width: 40px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	background: transparent;
+	border: solid 1px #777;
+	opacity: 0.5;
+	cursor: pointer;
+}
+div.file_button:hover {
+	opacity: 0.9;
+}
+/* end */
+/*===========================================================================*/
+@media screen and (max-width: 768px) {
+/* START */
+#file_conte .file_form {
+	width: 95%; /* 表示幅 */
+}
+/* END */
+}
+/*===========================================================================*/
+@media screen and (max-width: 480px) {
+/* START */
+#file_conte .file_form {
+	width: 98%; /* 表示幅 */
+	flex-wrap: wrap; /* 縦並び */
+}
+#file_conte .file_form > div.next {
+	padding: 0 5px 0 5px;
+	width: 100%;
+}
+/* END */

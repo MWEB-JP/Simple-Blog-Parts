@@ -1,0 +1,277 @@
+@CHARSET "UTF-8";
+/*---------------------------------------------------------------------------*/
+/*編集画面*/
+#editor {
+	position: fixed;
+	display: none;
+	z-index: 86;
+	opacity: 1.0;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+}
+#editor .inner {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	width: auto;
+	height: auto;
+	max-width: 680px;
+	max-height: 600px;
+	-webkit-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	-ms-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.2);
+	border: solid 1px #bfbfbf;
+	background: #efefef;
+}
+#edit_close {
+	position: absolute;
+	z-index: 87;
+	top: 0px;
+	right: 0px;
+	margin: 0;
+	padding: 0;
+	font-size: 30px;
+	text-align: center;
+	line-height: 1.0;
+	width: 34px;
+	height: 34px;
+	background: #bfbfbf;
+	cursor: pointer;
+}
+#edit_motion {
+	display: inline-block;
+	margin: 2px 20px 0 0;
+	padding: 0;
+	height: 30px;
+}
+#edit_layout {
+	display: inline-block;
+	margin: 2px 0 0 0;
+	padding: 0;
+	height: 30px;
+	opacity: 0.3;
+}
+#edit_layout:hover {
+	opacity: 1.0;
+}
+#edit_header {
+	position: relative;
+	margin: 0;
+	padding: 0 5px;
+	width: 100%;
+	min-height: 34px;
+	font-size: 14px;
+	line-height: 0.8;
+	background: #dfdfdf;
+}
+#edit_header:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+#edit_header li {
+	float: left;
+}
+#edit_header li img {
+	margin: 3px 5px 0 0;
+	height: 24px;
+	width: 24px;
+	cursor: pointer;
+}
+#edit_conte {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	justify-content: stretch;
+	align-items: stretch;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100px;
+	background: #efefef;
+}
+#edit_conte:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+/*---------------------------------------------------------------------------*/
+/*属性編集ボタン*/
+#edit_sidebar {
+	position: relative;
+	margin: 0;
+	padding: 0 2px;
+	flex: 1 1 26px;
+	width: 26px;
+	background: #dfdfdf;
+}
+#edit_sidebar ul {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	background: transparent;
+	opacity: 0.3;
+}
+#edit_sidebar ul:hover {
+	opacity: 1.0;
+}
+#edit_sidebar li {
+	flex: 1 1 22px;
+	margin: 5px 0 0 0;
+}
+#edit_sidebar li img {
+	margin: 0;
+	padding: 0;
+	height: 22px;
+	width: 22px;
+	cursor: pointer;
+}
+/*---------------------------------------------------------------------------*/
+/*編集画面コンテンツ*/
+#edit_conte .edit_panel {
+	clear: both;
+	position: relative;
+	margin: 0;
+	padding: 3px;
+	flex: 1 1 calc(100% - 30px);
+	width: calc(100% - 30px);
+	height: 100%;
+	background: #efefef;
+}
+#edit_conte .edit_panel:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+#edit_conte .edit_panel form {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+}
+#edit_conte .edit_panel .edit_commit {
+	width: 100%;
+	margin-top: 10px;
+	text-align: center;
+}
+/*---------------------------------------------------------------------------*/
+/* 表示サイズ */
+#edit_area {
+	position: relative;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 480px;
+	background: transparent;
+}
+/* テキストエリア */
+#edit_conte .edit_panel textarea {
+	position: relative;
+	margin: 0;
+	padding: 5px;
+	width: 100%;
+	height: 100%;
+	resize: none;
+	font-family: monospace,treminal,"Courier New",;
+	font-size: 16px;
+	line-height: 1.5;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	-ms-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	border: 1px solid #7f7f7f;
+	background: transparent;
+	color: #333333;
+}
+#edit_conte .edit_panel textarea:focus {
+	border: 1px solid #ff8500;
+}
+#edit_footer {
+	position: relative;
+	margin: 0;
+	padding: 3px;
+	width: 100%;
+	height: 30px;
+	background: #dfdfdf;
+}
+#edit_footer:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+/*---------------------------------------------------------------------------*/
+/* 編集開始ボタン */
+div.edit_button {
+	position: absolute;
+	top: 3px;
+	right: 10px;
+	margin: 0;
+	padding: 2px 0px 0px 0px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 1.0;
+	min-width: 40px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	background: transparent;
+	border: solid 1px #777;
+	opacity: 0.5;
+	cursor: pointer;
+}
+div.edit_button:hover {
+	opacity: 0.9;
+}
+div.add_button {
+	position: absolute;
+	top: 3px;
+	right: 55px;
+	margin: 0;
+	padding: 2px 0px 0px 0px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 1.0;
+	min-width: 40px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	background: transparent;
+	border: solid 1px #777;
+	opacity: 0.5;
+	cursor: pointer;
+}
+div.add_button:hover {
+	opacity: 0.9;
+}
+/* 表示用の枠 */
+.display_conte > section {
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #cfcfcf;
+}
+/* end */

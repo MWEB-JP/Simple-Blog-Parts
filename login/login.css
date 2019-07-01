@@ -1,0 +1,339 @@
+@CHARSET "UTF-8";
+/*---------------------------------------------------------------------------*/
+/*ログイン画面*/
+#login {
+	position: fixed;
+	display: none;
+	z-index: 86;
+	opacity: 1.0;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+}
+#login .inner {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	width: auto;
+	height: auto;
+	max-width: 400px; /* 幅を決める */
+	max-height: 300px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	-ms-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.2);
+	border: solid 2px #bfbfbf;
+	background: #efefef;
+}
+#login_close {
+	position: absolute;
+	z-index: 87;
+	top: -5px;
+	right: -5px;
+	margin: 0;
+	padding: 0;
+	font-size: 30px;
+	text-align: center;
+	line-height: 1.0;
+	width: 34px;
+	height: 34px;
+	background: #cfcfcf;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	border-radius: 15px;
+	border: solid 1px #bfbfbf;
+	cursor: pointer;
+}
+#login_header {
+	position: relative;
+	margin: 0;
+	padding: 5px 0 0 10px;
+	width: 100%;
+	height: 34px;
+	font-size: 16px; /* 文字サイズ */
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif, arial, verdana;
+	-webkit-border-radius: 15px 15px 0 0;
+	-moz-border-radius: 15px 15px 0 0;
+	-ms-border-radius: 15px 15px 0 0;
+	-o-border-radius: 15px 15px 0 0;
+	border-radius: 15px 15px 0 0;
+	background: transparent;
+}
+#login_header:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+#login_header li {
+	float: left;
+}
+#login_header li img {
+	margin-left: 3px;
+	height: 24px;
+	width: 24px;
+	cursor: pointer;
+}
+#login_conte {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	min-height: 200px;
+	background: #f7f7f7;
+}
+#login_conte:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+#login_conte form {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+}
+/* 表示サイズ */
+#login_area {
+	position: relative;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 200px;
+	background: transparent;
+}
+#login_area:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+/*ログイン画面コンテンツ*/
+#login_conte .login_panel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	padding-top: 10px;
+}
+#login_conte .login_form {
+	position: relative;
+	margin: 2px 0 0 0;
+	font-size: 16px; /* 文字サイズ */
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif, arial, verdana;
+	display: -webkit-flex;
+	display: flex;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	width: 100%;
+	min-width: 0;
+	background: transparent;
+}
+#login_conte .login_form h3 {
+	order: 1;
+	flex-basis: 140px; /* 幅 */
+	min-width: 140px;
+	min-height: 1.0em;
+	padding: 5px;
+	text-align: right;
+	font-size: 16px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	color: #3f3f3f; /* 文字色 */
+}
+#login_conte .login_form div {
+	order: 2;
+	flex: 1 0 auto;
+	flex-basis: 140px;
+	padding: 3px;
+	font-size: 16px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	min-width: 0;
+	color: #3f3f3f;
+}
+#login_footer {
+	position: relative;
+	padding: 5px;
+	width: 100%;
+	height: 36px;
+	font-size: 14px; /* 文字サイズ */
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif, arial, verdana;
+	text-align: center;
+	line-height: 1.5;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-webkit-border-radius: 0 0 15px 15px;
+	-moz-border-radius: 0 0 15px 15px;
+	-ms-border-radius: 0 0 15px 15px;
+	-o-border-radius: 0 0 15px 15px;
+	border-radius: 0 0 15px 15px;
+	background: transparent;
+}
+#login_footer:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+/*---------------------------------------------------------------------------*/
+/* 入力フォーム */
+#login_conte input[type="text"],
+#login_conte input[type="password"],
+#login_conte input[type="email"]
+{
+	margin: 0;
+	padding: 5px;
+	width: 90%;
+	max-width: 230px;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif, arial, verdana;
+	font-size: 16px;
+	line-height: 1.5;
+	word-wrap: break-word;
+	border: solid 1px #bfbfbf;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	-ms-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+	background: #fafafa;
+}
+/* 入力の際に、枠を表示する */
+#login_conte input[type="text"]:focus,
+#login_conte input[type="password"]:focus,
+#login_conte input[type="email"]:focus
+{
+	border: 1px solid #ffc0cb;
+}
+/* 確認ボタン */
+#login_conte input[type="checkbox"] {
+	display: inline-block;
+	margin: 10px 3px 0 10px;
+	font-size: 14px;
+	line-height: 1.0;
+	vertical-align: baseline;
+	word-wrap:
+	break-word;
+}
+#login_conte label {
+  display: inline-block;
+  padding: 0 0 0 3px;
+  font-size: 14px;
+  line-height: 1.0;
+  font-family: "Hiragino Kaku Gothic Pro", Meiryo, Arial, "ＭＳ Ｐゴシック", sans-serif;
+  color: #333;
+}
+#login_conte .login_commit {
+	width: 100%;
+	margin-top: 10px;
+	text-align: center;
+}
+#login_conte .bt_commit {
+	margin: 0 10px;
+	font-size: 16px;
+	width: 120px;
+	height: 32px;
+	background: #7f3f3f;
+	color: #ffffff;
+	opacity: 0.7;
+}
+#login_conte .bt_commit:hover {
+	opacity: 0.9;
+}
+#login_conte .bt_commit:disabled {
+	opacity: 0.3;
+}
+/* ログイン開始ボタン */
+/*
+"<div class='login_button' onclick='login_start(this);'>&#9124;&#9029;</div>"
+*/
+div.login_button {
+	position: absolute;
+	top: 0px;
+	right: 55px;
+	#float: right;
+	margin: 3px 0px 0px 10px;
+	padding: 2px 0px 1px 0px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 1.0;
+	min-width: 50px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	background: transparent;
+	border: solid 1px #777;
+	opacity: 0.1;
+	cursor: pointer;
+	z-index: 83;
+}
+div.login_button:hover {
+	opacity: 0.7;
+}
+div.logout_button {
+	position: absolute;
+	top: 0px;
+	right: 55px;
+	#float: right;
+	margin: 3px 0px 0px 10px;
+	padding: 2px 0px 1px 0px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 1.0;
+	min-width: 50px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	background: transparent;
+	border: solid 1px #777;
+	opacity: 0.5;
+	cursor: pointer;
+	z-index: 83;
+}
+div.logout_button:hover {
+	opacity: 0.9;
+}
+div.kanri_button {
+	position: absolute;
+	top: 0px;
+	right: 110px;
+	#float: right;
+	margin: 3px 0px 0px 10px;
+	padding: 2px 0px 1px 0px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 1.0;
+	min-width: 50px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	background: transparent;
+	border: solid 1px #777;
+	opacity: 0.5;
+	cursor: pointer;
+	z-index: 83;
+}
+div.kanri_button:hover {
+	opacity: 0.9;
+}
+/*ログイン画面*/
